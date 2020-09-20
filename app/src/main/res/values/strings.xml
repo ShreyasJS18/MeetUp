@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MeetUp</string>
+    <string name="meet_up">Meet Up</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="chats_fragment">CHATS FRAGMENT</string>
+    <string name="Groups_fragment">Groupsfrag</string>
+    <string name="groups_fragment">Groups fragment</string>
+    <string name="invites_fragment">Invites Fragment</string>
+    <string name="sign_outdesc">Sign out</string>
+</resources>

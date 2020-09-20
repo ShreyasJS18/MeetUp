@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:title="Find Friends"
+    android:id="@+id/find_friends"
+    app:showAsAction="never">
+</item>
+    <item
+        android:title="Settings"
+        android:id="@+id/setting"
+        app:showAsAction="never">
+    </item>
+    <item
+        android:title="Sign Out"
+        android:id="@+id/signout"
+        app:showAsAction="never">
+    </item>
+
+
+</menu>

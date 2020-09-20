@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/greybackground"
+    tools:context=".MainActivity">
+
+
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/greybackground"
+        tools:ignore="MissingConstraints" >
+
+
+        <include
+            android:id="@+id/maintoolbar"
+            layout="@layout/app_bar_layout"
+            android:layout_marginTop="20dp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="118dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+    </include>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/main_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/greybackground"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:tabIndicatorColor="@color/white"
+        app:tabSelectedTextColor="@color/red"
+        app:tabTextColor="@color/white"
+        app:tabRippleColor="@color/grey"
+        app:tabTextAppearance="@style/tabtextstyle">
+    </com.google.android.material.tabs.TabLayout>
+
+
+</com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/main_tabs_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appbarlayout1"
+     ></androidx.viewpager.widget.ViewPager>
+
+    </RelativeLayout>
