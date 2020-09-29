@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -68,5 +70,31 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+         super.onCreateOptionsMenu(menu);
 
+        getMenuInflater().inflate(R.menu.options_menu,menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+         super.onOptionsItemSelected(item);
+        if(item.getItemId()==R.id.find_friends)
+        {
+
+        }
+        if(item.getItemId()==R.id.setting)
+        {
+
+        }
+        if(item.getItemId()==R.id.signout)
+        {
+            mAuth.signOut();
+            sendUserToLoginActivity();
+        }
+        return true;
+    }
 }
