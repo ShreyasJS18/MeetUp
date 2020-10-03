@@ -1,9 +1,13 @@
 package com.example.meetup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -12,6 +16,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
@@ -19,6 +25,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     private FirebaseUser currentUser;
     private FirebaseAuth mAuth;
@@ -48,11 +56,22 @@ public class MainActivity extends AppCompatActivity {
 
         mytablayout=(TabLayout)findViewById(R.id.main_tabs);
         mytablayout.setupWithViewPager(myviewpager);
+        //mytablayout.getTabAt(0).setIcon(R.drawable.chaticon);
+        //mytablayout.getTabAt(1).setIcon(R.drawable.contactico);
+        getpermissions();
+    }
+
+    private void getpermissions() {
+
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M)
+        {
+            requestPermissions(new String[]{Manifest.permission.READ_CONTACTS,Manifest.permission.WRITE_CONTACTS},1);
+        }
+
     }
 
 
-
-   @Override
+    @Override
  protected void onStart() {
         super.onStart();
    if(FirebaseAuth.getInstance().getCurrentUser()==null)
@@ -97,4 +116,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+
+    
+
 }
